@@ -7,11 +7,6 @@ body {
     padding: 0;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
 /* Header */
 header {
     text-align: center;
@@ -76,13 +71,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Section Styles */
-h2, h3 {
-    color: #2980b9; /* Blue */
-    font-size: 2rem;
-    margin: 20px 0;
-}
-
 /* Hover Reveal */
 .hover-reveal {
     position: relative;
@@ -114,17 +102,6 @@ h2, h3 {
 
 .hover-reveal:hover + .hidden-content {
     display: block;
-}
-
-/* Contact Links */
-a {
-    color: #e67e22; /* Orange */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #2980b9; /* Blue */
 }
 
 /* Footer */
