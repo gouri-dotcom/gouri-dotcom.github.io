@@ -1,95 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gouri Srikumar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /* General styling */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f9;
         }
+
         header {
+            background: linear-gradient(120deg, #4a90e2, #9013fe);
+            color: white;
             text-align: center;
-            margin-top: 50px;
-        }
-        h1 {
-            font-size: 3rem;
-            color: #333;
-        }
-        .role {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
+            padding: 100px 20px;
+            position: relative;
             overflow: hidden;
-            white-space: nowrap;
-            display: inline-block;
-            width: 0;
-            animation: slideIn 5s linear infinite;
         }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .role {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 10px;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role span {
+            position: absolute;
+            white-space: nowrap;
+            animation: slideIn 3s linear infinite;
+        }
+
         @keyframes slideIn {
             0% {
-                width: 0;
+                transform: translateX(100%);
             }
-            25% {
-                width: 100%;
-                transform: translateX(0);
+            10% {
+                transform: translateX(0%);
+            }
+            40% {
+                transform: translateX(0%);
             }
             50% {
-                width: 100%;
-                transform: translateX(0);
-            }
-            75% {
-                width: 0;
-                transform: translateX(100%);
+                transform: translateX(-100%);
             }
             100% {
-                width: 0;
-                transform: translateX(100%);
+                transform: translateX(-100%);
             }
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: #333;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Gouri Srikumar</h1>
-        <div class="role">
-            Machine Learning Enthusiast
-        </div>
-        <div class="role">
-            Data Scientist
-        </div>
-        <div class="role">
-            Quantum Computing
+        <div class="container">
+            <h1>Gouri Srikumar</h1>
+            <p class="role">
+                <span id="roleText"></span>
+            </p>
         </div>
     </header>
 
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am currently a student with a strong passion for machine learning, AI, deep learning, and quantum computing.
+            I'm skilled in areas like Predictive Analytics, Data Science, and Business Intelligence. I aim to make impactful
+            contributions to the technology field through innovation and continuous learning.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>[Your experience section here]</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:gourisrikumarrr@gmail.com">gourisrikumarrr@gmail.com</a></p>
+        <p>Phone: +91 9037818855</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gouri Srikumar. All Rights Reserved.</p>
+    </footer>
+
     <script>
-        const roles = ['Machine Learning Enthusiast', 'Data Scientist', 'Quantum Computing'];
-        const roleDivs = document.querySelectorAll('.role');
+        const roles = [
+            "Machine Learning Enthusiast",
+            "Data Scientist",
+            "Quantum Computing Enthusiast"
+        ];
+
+        const roleText = document.getElementById("roleText");
         let currentIndex = 0;
 
-        setInterval(() => {
-            roleDivs.forEach((div, index) => {
-                div.style.animation = 'none';
-                div.offsetHeight;  // Trigger reflow
-                div.style.animation = '';
-            });
-
-            roleDivs.forEach((div, index) => {
-                if (index === currentIndex) {
-                    div.innerText = roles[currentIndex];
-                    div.style.animation = 'slideIn 5s linear infinite';
-                } else {
-                    div.innerText = '';
-                    div.style.animation = 'none';
-                }
-            });
-
+        function updateRoleText() {
+            roleText.innerText = roles[currentIndex];
             currentIndex = (currentIndex + 1) % roles.length;
-        }, 6000); // Change role every 6 seconds
+        }
+
+        setInterval(updateRoleText, 1500); // Text stays for 1.5 seconds now
+        updateRoleText(); // Initialize the first role
     </script>
 </body>
+
 </html>
