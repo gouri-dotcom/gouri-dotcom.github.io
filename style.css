@@ -1,7 +1,6 @@
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    color: #fff;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -12,40 +11,43 @@ h1 {
     font-weight: bold;
     margin-top: 20%;
     position: relative;
+}
+
+h1 .name {
     display: inline-block;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    color: #1e3a8a; /* Navy */
+    transition: transform 0.4s ease-in-out;
 }
 
-h1 span {
-    display: block;
+h1 .role {
+    display: inline-block;
+    color: #f97316; /* Orange */
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
-h1:hover span {
+h1:hover .name {
+    transform: translateY(-10px); /* Slight "eye-roll" effect */
+}
+
+h1:hover .role {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
-h1:hover {
-    transform: translateY(-10px); /* Slight roll up effect */
+h1:hover .role:nth-child(2) {
+    transition-delay: 1.5s; /* Data Scientist appears after 1.5 seconds */
 }
 
-h1 span:nth-child(1) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0s;
+h1:hover .role:nth-child(3) {
+    transition-delay: 3s; /* Machine Learning Enthusiast after 3 seconds */
 }
 
-h1 span:nth-child(2) {
-    transition-delay: 1.5s;
+h1:hover .role:nth-child(4) {
+    transition-delay: 4.5s; /* Quantum Computing Enthusiast after 4.5 seconds */
 }
 
-h1 span:nth-child(3) {
-    transition-delay: 3s;
-}
-
-h1 span:nth-child(4) {
-    transition-delay: 4.5s;
+h1:hover .role:nth-child(1) {
+    transition-delay: 0s; /* Default text stays first */
 }
