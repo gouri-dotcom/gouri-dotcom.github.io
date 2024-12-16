@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gouri Srikumar - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>GOURI SRIKUMAR</h1>
-</body>
-</html>
+/* Set up background color and text styles */
+body {
+    background-color: #808080;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Hover effect */
+h1:hover {
+    transform: translateY(-10px);
+}
