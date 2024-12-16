@@ -1,19 +1,51 @@
-/* Set up background color and text styles */
 body {
-    background-color: #808080;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
     color: #fff;
-    font-family: 'Arial', sans-serif;
     text-align: center;
-    margin-top: 50px;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 60px;
     font-weight: bold;
-    transition: transform 0.6s ease-in-out;
+    margin-top: 20%;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* Hover effect */
+h1 span {
+    display: block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+h1:hover span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 h1:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Slight roll up effect */
+}
+
+h1 span:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+h1 span:nth-child(2) {
+    transition-delay: 1.5s;
+}
+
+h1 span:nth-child(3) {
+    transition-delay: 3s;
+}
+
+h1 span:nth-child(4) {
+    transition-delay: 4.5s;
 }
