@@ -3,40 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gouri Srikumar - Portfolio</title>
+    <title>Gouri Srikumar</title>
     <style>
-        /* General Reset */
+        /* General Page Style */
         body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f0f0f0; /* Light Grey Background */
-            font-family: 'Arial', sans-serif;
-        }
-
-        /* Centered Container */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
-            text-align: center;
-            color: #ffffff;
-            background-color: #2c3e50; /* Navy Background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d3d3d3; /* light gray */
+            font-family: Arial, sans-serif;
         }
 
-        /* Header Styling */
-        h1 {
-            font-size: 4rem;
-            letter-spacing: 4px;
+        /* Header Text Style */
+        #main-text {
+            font-size: 3rem;
+            font-weight: bold;
             text-transform: uppercase;
-            color: #e67e22; /* Orange Text */
+            color: #001f3f; /* navy blue */
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            cursor: pointer;
+        }
+
+        /* Rotating Text */
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff851b; /* orange */
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Default Text */
+        .default {
+            transform: translateY(0);
+            color: #001f3f; /* navy blue */
+        }
+
+        /* Hover Animation */
+        #main-text:hover .text {
+            transform: translateY(-100%);
+        }
+
+        #main-text:hover .text:nth-child(2) {
+            animation: rollText 6s infinite 0.5s;
+        }
+
+        @keyframes rollText {
+            0%, 25% { transform: translateY(-100%); }
+            26%, 50% { transform: translateY(0); }
+            51%, 75% { transform: translateY(100%); }
+            76%, 100% { transform: translateY(-100%); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>GOURI SRIKUMAR</h1>
+    <div id="main-text">
+        <div class="text default">GOURI SRIKUMAR</div>
+        <div class="text">MACHINE LEARNING ENTHUSIAST</div>
+        <div class="text">DATA SCIENTIST</div>
+        <div class="text">QUANTUM COMPUTING ENTHUSIAST</div>
     </div>
 </body>
 </html>
