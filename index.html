@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,102 +9,87 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #111;
-            color: #fff;
+            background-color: #f4f4f9;
         }
-
         header {
             text-align: center;
-            padding: 50px 0;
-            background: #111;
+            margin-top: 50px;
         }
-
-        header h1 {
-            font-size: 3em;
+        h1 {
+            font-size: 3rem;
+            color: #333;
         }
-
         .role {
-            font-size: 1.5em;
+            font-size: 2rem;
             font-weight: bold;
-            position: relative;
-            top: 20px;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            color: #333;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            width: 0;
+            animation: slideIn 5s linear infinite;
         }
-
-        .role.show {
-            opacity: 1;
-        }
-
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        #about {
-            cursor: pointer;
-        }
-
-        #about p {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        #about:hover p {
-            opacity: 1;
+        @keyframes slideIn {
+            0% {
+                width: 0;
+            }
+            25% {
+                width: 100%;
+                transform: translateX(0);
+            }
+            50% {
+                width: 100%;
+                transform: translateX(0);
+            }
+            75% {
+                width: 0;
+                transform: translateX(100%);
+            }
+            100% {
+                width: 0;
+                transform: translateX(100%);
+            }
         }
     </style>
 </head>
-
 <body>
     <header>
-        <div class="container">
-            <h1>Gouri Srikumar</h1>
-            <p id="role" class="role">Machine Learning Enthusiast</p>
+        <h1>Gouri Srikumar</h1>
+        <div class="role">
+            Machine Learning Enthusiast
+        </div>
+        <div class="role">
+            Data Scientist
+        </div>
+        <div class="role">
+            Quantum Computing
         </div>
     </header>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am currently a student with a strong passion for machine learning, AI, deep learning, and quantum computing.
-                I'm skilled in areas like Predictive Analytics, Data Science, and Business Intelligence. I aim to make impactful
-                contributions to the technology field through innovation and continuous learning.</p>
-        </div>
-    </section>
-
     <script>
-        const roles = [
-            'Machine Learning Enthusiast',
-            'Data Scientist',
-            'Quantum Computing',
-        ];
-        let currentRoleIndex = 0;
+        const roles = ['Machine Learning Enthusiast', 'Data Scientist', 'Quantum Computing'];
+        const roleDivs = document.querySelectorAll('.role');
+        let currentIndex = 0;
 
-        function updateRole() {
-            const roleElement = document.getElementById('role');
-            
-            // Slide out the previous role
-            roleElement.classList.remove('show');
+        setInterval(() => {
+            roleDivs.forEach((div, index) => {
+                div.style.animation = 'none';
+                div.offsetHeight;  // Trigger reflow
+                div.style.animation = '';
+            });
 
-            setTimeout(() => {
-                // Update the role text
-                roleElement.textContent = roles[currentRoleIndex];
-                
-                // Slide in the new role
-                roleElement.classList.add('show');
-            }, 500); // Wait for the transition to complete before updating
+            roleDivs.forEach((div, index) => {
+                if (index === currentIndex) {
+                    div.innerText = roles[currentIndex];
+                    div.style.animation = 'slideIn 5s linear infinite';
+                } else {
+                    div.innerText = '';
+                    div.style.animation = 'none';
+                }
+            });
 
-            // Move to the next role, reset to 0 when finished
-            currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        }
-
-        // Run the updateRole function every 4 seconds
-        setInterval(updateRole, 4000);
-
-        // Initialize the first role
-        updateRole();
+            currentIndex = (currentIndex + 1) % roles.length;
+        }, 6000); // Change role every 6 seconds
     </script>
 </body>
-
 </html>
