@@ -5,106 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gouri Srikumar - Portfolio</title>
     <style>
-        /* General styling */
+        /* General Reset */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0; /* Light Grey Background */
+            font-family: 'Arial', sans-serif;
         }
 
-        header {
-            background: linear-gradient(120deg, #4a90e2, #9013fe);
-            color: white;
+        /* Centered Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            overflow: hidden;
+            color: #ffffff;
+            background-color: #2c3e50; /* Navy Background */
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
+        /* Header Styling */
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .role-container {
-            height: 40px;
-            position: relative;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .role {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: white;
-            position: absolute;
-            white-space: nowrap;
-            animation: slideInOut 6s linear infinite;
-        }
-
-        @keyframes slideInOut {
-            0% {
-                transform: translateX(100%);
-            }
-            10% {
-                transform: translateX(0%);
-            }
-            40% {
-                transform: translateX(0%);
-            }
-            50% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        h2 {
-            margin: 20px 0;
-            font-size: 2rem;
-            text-transform: uppercase;
-            color: #333;
+            color: #e67e22; /* Orange Text */
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>GOURI SRIKUMAR</h1>
-        <div class="role-container">
-            <span class="role">Machine Learning</span>
-            <span class="role">Data Science</span>
-            <span class="role">Quantum Computing</span>
-        </div>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am currently a student with a strong passion for machine learning, AI, deep learning, and quantum computing.
-            I'm skilled in areas like Predictive Analytics, Data Science, and Business Intelligence. I aim to make impactful
-            contributions to the technology field through innovation and continuous learning.</p>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>[Your experience section here]</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:gourisrikumarrr@gmail.com">gourisrikumarrr@gmail.com</a></p>
-        <p>Phone: +91 9037818855</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Gouri Srikumar. All Rights Reserved.</p>
-    </footer>
+    </div>
 </body>
 </html>
