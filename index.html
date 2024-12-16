@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gouri Srikumar - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* General styling */
         body {
@@ -30,22 +28,23 @@
             letter-spacing: 2px;
         }
 
+        .role-container {
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
         .role {
             font-size: 1.5rem;
             font-weight: 300;
-            margin-top: 10px;
-            height: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .role span {
+            color: white;
             position: absolute;
             white-space: nowrap;
-            animation: slideIn 3s linear infinite;
+            animation: slideInOut 6s linear infinite;
         }
 
-        @keyframes slideIn {
+        @keyframes slideInOut {
             0% {
                 transform: translateX(100%);
             }
@@ -76,14 +75,13 @@
         }
     </style>
 </head>
-
 <body>
     <header>
-        <div class="container">
-            <h1>Gouri Srikumar</h1>
-            <p class="role">
-                <span id="roleText"></span>
-            </p>
+        <h1>GOURI SRIKUMAR</h1>
+        <div class="role-container">
+            <span class="role">Machine Learning Enthusiast</span>
+            <span class="role">Data Scientist</span>
+            <span class="role">Quantum Computing Enthusiast</span>
         </div>
     </header>
 
@@ -108,25 +106,5 @@
     <footer>
         <p>&copy; 2024 Gouri Srikumar. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        const roles = [
-            "Machine Learning Enthusiast",
-            "Data Scientist",
-            "Quantum Computing Enthusiast"
-        ];
-
-        const roleText = document.getElementById("roleText");
-        let currentIndex = 0;
-
-        function updateRoleText() {
-            roleText.innerText = roles[currentIndex];
-            currentIndex = (currentIndex + 1) % roles.length;
-        }
-
-        setInterval(updateRoleText, 1500); // Text stays for 1.5 seconds now
-        updateRoleText(); // Initialize the first role
-    </script>
 </body>
-
 </html>
